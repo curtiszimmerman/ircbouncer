@@ -23,5 +23,26 @@ module.exports = exports = __bouncer = (function() {
 	var net = require('net');
 	var url = require('url');
 
-	
+	var __data = {
+		server: {
+			ports: {
+				http: {
+					listen: 4488
+				},
+				irc: {
+					listen: 6667,
+					connect: 0
+				}
+			},
+			state: {
+
+			},
+			stats: {
+				timestamps: {
+					last: 0,
+					up: 0
+				}
+			}
+		}
+	};
 })();
