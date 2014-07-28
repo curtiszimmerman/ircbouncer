@@ -24,6 +24,11 @@ module.exports = exports = __bouncer = (function() {
 	var url = require('url');
 
 	var __data = {
+		cache: {
+			settings: {
+				cleanupInterval: 1
+			}
+		},
 		server: {
 			ports: {
 				http: {
@@ -116,7 +121,13 @@ module.exports = exports = __bouncer = (function() {
 	})();
 
 	var init = (function() {
-		_log.log('bouncer initialized!');
+		_log.log('initializing bouncer...');
+		// bootstrap the bouncer
+		__data.server.stats.timestamps.up = Math.round(new Date().getTime()/1000);
+		setTimeout(function() {
+
+		}, __data.cache.settings.cleanupInterval*1000);
+		_log.log('initialization complete!');
 	})();
 
 	var clientIRC = (function() {
