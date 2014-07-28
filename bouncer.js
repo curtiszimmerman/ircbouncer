@@ -35,9 +35,14 @@ module.exports = exports = __bouncer = (function() {
 				}
 			},
 			state: {
-
+				debug: false,
+				environments: ['dev','prod']
 			},
 			stats: {
+				messages: {
+					received: 0,
+					sent: 0
+				},
 				timestamps: {
 					last: 0,
 					up: 0
